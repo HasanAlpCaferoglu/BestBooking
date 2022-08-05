@@ -79,6 +79,10 @@
             font-weight: bold;
             cursor: pointer;
             margin-top: 10px;
+
+            &:active{
+              background-color: green;
+            }
           }
         }
       }

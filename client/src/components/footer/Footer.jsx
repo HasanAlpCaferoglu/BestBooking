@@ -4,7 +4,7 @@ import React from "react";
 export default function Footer() {
 
   const handleClick = async () => {
-    window.location = "http://localhost:3001"; // redirect to the admin panel
+    window.location = "http://localhost:3001/admin/login"; // redirect to the admin panel
   };
 
   return (

@@ -1,4 +1,5 @@
 import "./new.scss"; 
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
@@ -9,6 +10,8 @@ import axios from "axios";
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
   const [info, setInfo] = useState({});
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -33,12 +36,13 @@ const New = ({ inputs, title }) => {
       };
 
       await axios.post("/auth/register", newUser);
+      navigate("/admin")
     } catch (err) {
       console.log(err);
     }
   };
 
-  console.log(info);
+
   return (
     <div className="new">
       <Sidebar />

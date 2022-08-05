@@ -1,4 +1,4 @@
-import "./datatable.scss";
+import "./datatable.scss"; 
 import { DataGrid } from "@mui/x-data-grid";
 import { userColumns, userRows } from "../../datatablesource";
 import { Link, useLocation } from "react-router-dom";
@@ -8,7 +8,7 @@ import axios from "axios";
 
 const Datatable = ({columns}) => {
   const location = useLocation();
-  const path = location.pathname.split("/")[1];
+  const path = location.pathname.split("/")[2];
   const [list, setList] = useState();
   const { data, loading, error } = useFetch(`/${path}`);
 
@@ -31,7 +31,7 @@ const Datatable = ({columns}) => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="/users/test" style={{ textDecoration: "none" }}>
+            <Link to="/admin/users/test" style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
             </Link>
             <div
@@ -49,13 +49,13 @@ const Datatable = ({columns}) => {
     <div className="datatable">
       <div className="datatableTitle">
         {path}
-        <Link to={`/${path}/new`} className="link">
+        <Link to={`${location.pathname}/new`} className="link">
           Add New
         </Link>
       </div>
       <DataGrid
         className="datagrid"
-        rows={list}
+        rows={list ? list : []}
         columns={columns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
