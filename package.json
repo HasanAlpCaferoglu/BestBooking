@@ -5,10 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "node api/index.js",
     "server": "nodemon api/index.js",
     "client": "npm start --prefix client",
     "admin": "npm start --prefix admin",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run admin\" ",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run admin\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client && npm install --prefix admin && npm run build --prefix admin"
   },
   "repository": {
@@ -31,6 +32,7 @@
     "nodemon": "^2.0.19"
   },
   "devDependencies": {
-    "concurrently": "^7.3.0"
+    "concurrently": "^7.3.0",
+    "nodemon": "^2.0.19"
   }
 }
