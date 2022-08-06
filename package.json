@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "npm": "8.10.0",
+    "node": "16.15.0"
+  },
   "scripts": {
     "start": "node api/index.js",
     "server": "nodemon api/index.js",
