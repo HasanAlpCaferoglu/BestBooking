@@ -7,8 +7,8 @@ const FeaturedProperties = () => {
   const { data, loading, error } = useFetch("/hotels?featured=true&limit=6"); // you can limit the number of item by adding "&limit=4"
   const navigate = useNavigate();
   const { city, dates, options, dispatch } = useContext(SearchContext);
-  console.log(Array.isArray(data))
-  console.log(data)
+  //console.log(Array.isArray(data))
+  //console.log(data)
 
   const handleClick = (hotelItemId, hotelItemCity) => {
     navigate(`/hotels/${hotelItemId}`, {
