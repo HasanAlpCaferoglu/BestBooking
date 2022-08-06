@@ -7,6 +7,8 @@ const FeaturedProperties = () => {
   const { data, loading, error } = useFetch("/hotels?featured=true&limit=6"); // you can limit the number of item by adding "&limit=4"
   const navigate = useNavigate();
   const { city, dates, options, dispatch } = useContext(SearchContext);
+  console.log(Array.isArray(data))
+  console.log(data)
 
   const handleClick = (hotelItemId, hotelItemCity) => {
     navigate(`/hotels/${hotelItemId}`, {
@@ -22,7 +24,8 @@ const FeaturedProperties = () => {
         "Loading"
       ) : (
         <>
-          {data.length !==0 ? data.map((item) => (
+        {console.log(data)}
+          {data.map((item) => (
             <div
               onClick={() => handleClick(item._id, item.city)}
               className="flex-none gap-2.5 flex flex-col cursor-pointer"
@@ -47,7 +50,7 @@ const FeaturedProperties = () => {
                 </div>
               )}
             </div>
-          )) : null}
+          ))}
         </>
       )}
     </div>
