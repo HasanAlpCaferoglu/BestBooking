@@ -2,6 +2,10 @@
   "name": "lamadmin",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "8.10.0",
+    "node": "16.15.0"
+  },
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
