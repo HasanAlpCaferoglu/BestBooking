@@ -22,7 +22,7 @@ const FeaturedProperties = () => {
         "Loading"
       ) : (
         <>
-          {data.map((item) => (
+          {data && data.map((item) => (
             <div
               onClick={() => handleClick(item._id, item.city)}
               className="flex-none gap-2.5 flex flex-col cursor-pointer"
