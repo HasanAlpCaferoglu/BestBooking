@@ -14,7 +14,6 @@ const useFetch = (urlEntry) => {
     console.log(url)
   } else {
     url = urlEntry;
-    console.log("in the development")
   }
 
  
@@ -22,10 +21,11 @@ const useFetch = (urlEntry) => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-
       try {
         const res = await axios.get(url);
         setData(res.data);
+        console.log("res.data is")
+        console.log(res.data)
       } catch (err) {
         setError(err);
       }
