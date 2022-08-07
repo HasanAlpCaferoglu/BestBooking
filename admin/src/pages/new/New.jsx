@@ -36,7 +36,7 @@ const New = ({ inputs, title }) => {
       };
 
       await axios.post("/auth/register", newUser);
-      navigate("/admin")
+      navigate("/admin/users")
     } catch (err) {
       console.log(err);
     }

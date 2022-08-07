@@ -1,4 +1,5 @@
 import "./newHotel.scss";
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
@@ -11,6 +12,8 @@ const NewHotel = () => {
   const [files, setFiles] = useState("");
   const [info, setInfo] = useState({});
   const [rooms, setRooms] = useState([]);
+
+  const navigate = useNavigate();
 
   const { data, loading, error } = useFetch("/rooms");
 
@@ -53,6 +56,7 @@ const NewHotel = () => {
       };
 
       await axios.post("/hotels", newhotel);
+      navigate("/admin/hotels")
     } catch (err) {console.log(err)}
   };
   return (

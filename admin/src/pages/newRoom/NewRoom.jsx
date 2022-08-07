@@ -1,4 +1,5 @@
 import "./newRoom.scss";
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
@@ -12,6 +13,9 @@ const NewRoom = () => {
   const [hotelId, setHotelId] = useState(undefined);
   const [rooms, setRooms] = useState([]);
 
+  const navigate = useNavigate();
+
+
   const { data, loading, error } = useFetch("/hotels");
 
   const handleChange = (e) => {
@@ -23,6 +27,7 @@ const NewRoom = () => {
     const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
     try {
       await axios.post(`/rooms/${hotelId}`, { ...info, roomNumbers });
+      navigate("/admin/rooms")
     } catch (err) {
       console.log(err);
     }

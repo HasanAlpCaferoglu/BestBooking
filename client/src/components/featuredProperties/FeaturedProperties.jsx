@@ -4,11 +4,10 @@ import { useContext } from "react";
 import { SearchContext } from "../../context/SearchContext";
 
 const FeaturedProperties = () => {
-  const { data, loading, error } = useFetch("api/hotels?featured=true&limit=6"); // you can limit the number of item by adding "&limit=4"
+  const { data, loading, error } = useFetch("/hotels?featured=true&limit=6"); // you can limit the number of item by adding "&limit=4"
   const navigate = useNavigate();
   const { city, dates, options, dispatch } = useContext(SearchContext);
-  //console.log(Array.isArray(data))
-  //console.log(data)
+ 
 
   const handleClick = (hotelItemId, hotelItemCity) => {
     navigate(`/hotels/${hotelItemId}`, {
@@ -24,7 +23,6 @@ const FeaturedProperties = () => {
         "Loading"
       ) : (
         <>
-        {console.log(data)}
           {data.map((item) => (
             <div
               onClick={() => handleClick(item._id, item.city)}

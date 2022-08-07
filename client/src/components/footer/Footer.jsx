@@ -1,10 +1,16 @@
 import { FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
 
   const handleClick = async () => {
-    window.location = "http://localhost:3001/admin/login"; // redirect to the admin panel
+    if (process.env.NODE_ENV === "production") {
+      navigate("/admin/login");
+    } else {
+      window.location = "http://localhost:3001/admin/login"; // redirect to the admin panel
+    }
   };
 
   return (
@@ -82,7 +88,10 @@ export default function Footer() {
                   Other Resources
                 </span>
                 <ul>
-                  <li onClick={handleClick} className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm cursor-pointer">
+                  <li
+                    onClick={handleClick}
+                    className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm cursor-pointer"
+                  >
                     Admin Panel
                   </li>
                   <li className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm">

@@ -3,7 +3,7 @@ import useFetch from "../../hooks/useFetch";
 const Featured = () => {
   const { data, loading, error } = useFetch(
     "/hotels/countByCity?cities=berlin,madrid,london"
-  ); //instead of writing whole url we use proxy in the packacge.json file
+  ); 
 
   return (
     <div className=" w-full flex justify-between gap-5 z-1 flex-wrap">
