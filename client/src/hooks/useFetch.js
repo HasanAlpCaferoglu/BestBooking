@@ -10,8 +10,7 @@ const useFetch = (urlEntry) => {
   
 
   if (process.env.NODE_ENV === "production") {
-    url = "api" + {urlEntry};
-    console.log("in the production")
+    url = "api" + urlEntry;
     console.log(url)
   } else {
     url = urlEntry;
