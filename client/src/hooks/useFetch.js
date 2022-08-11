@@ -6,13 +6,15 @@ const useFetch = (url) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   
-  //let url = "";
-  // if (process.env.NODE_ENV === "production") {
-  //   url = "api" + urlEntry;
-  //   console.log(url)
-  // } else {
-  //   url = urlEntry;
-  // }
+  let url = "";
+  
+
+  if (process.env.NODE_ENV === "production") {
+    url = "api" + urlEntry;
+    console.log(url)
+  } else {
+    url = urlEntry;
+  }
 
  
 
