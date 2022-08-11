@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const useFetch = (urlEntry) => {
+const useFetch = (url) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -9,12 +9,12 @@ const useFetch = (urlEntry) => {
   let url = "";
   
 
-  if (process.env.NODE_ENV === "production") {
-    url = "api" + urlEntry;
-    console.log(url)
-  } else {
-    url = urlEntry;
-  }
+  // if (process.env.NODE_ENV === "production") {
+  //   url = "api" + urlEntry;
+  //   console.log(url)
+  // } else {
+  //   url = urlEntry;
+  // }
 
  
 
