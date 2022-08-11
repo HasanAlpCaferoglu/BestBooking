@@ -6,9 +6,7 @@ const useFetch = (url) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   
-  let url = "";
-  
-
+  //let url = "";
   // if (process.env.NODE_ENV === "production") {
   //   url = "api" + urlEntry;
   //   console.log(url)
