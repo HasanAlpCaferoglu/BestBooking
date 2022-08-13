@@ -1,10 +1,20 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const useFetch = (url) => {
+const useFetch = (urlEntry) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+
+  let url = "";
+  
+
+  if (process.env.NODE_ENV === "production") {
+    url = "api" + urlEntry;
+    console.log(url)
+  } else {
+    url = urlEntry;
+  }
 
   useEffect(() => {
     const fetchData = async () => {
