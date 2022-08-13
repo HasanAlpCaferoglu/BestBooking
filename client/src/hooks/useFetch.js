@@ -6,11 +6,9 @@ const useFetch = (urlEntry) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   
-  console.log('process.env.PORT is ')
-  console.log(process.env.PORT)
-
   let url = "";
   
+
   if (process.env.NODE_ENV === "production") {
     url = "api" + urlEntry;
     console.log(url)
