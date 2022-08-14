@@ -9,7 +9,7 @@ export default function Footer() {
     if (process.env.NODE_ENV === "production") {
       navigate("/admin/login");
     } else {
-      window.location = "http://localhost:3001/admin/login"; // redirect to the admin panel
+      navigate("/admin");
     }
   };
 

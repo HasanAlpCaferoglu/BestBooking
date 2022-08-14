@@ -13,6 +13,7 @@ import { hotelColumns, roomColumns, userColumns } from "./datatablesource";
 import NewHotel from "./pages/newHotel/NewHotel";
 import NewRoom from "./pages/newRoom/NewRoom";
 
+
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
