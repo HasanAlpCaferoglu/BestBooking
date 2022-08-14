@@ -45,7 +45,7 @@ const SearchItem = ({ item }) => {
               Includes taxes and fees
             </span>
             
-            <Link to={`/hotels/${item._id}`}>
+            <Link to={`/api/hotels/find/${item._id}`}>
               <button className="siCheckButton bg-[#0071c2] text-white font-bold px-[5px] py-2.5 border-none cursor-pointer rounded-[5px] ">
                 See availability
               </button>
