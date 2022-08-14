@@ -57,7 +57,7 @@ function Login() {
         <button
           disabled={loading}
           onClick={handleClick}
-          className="border-none px-5 py-2.5 bg-[#0071c2] text-white font-bold cursor-pointer rounded-[5px] disabled:cursor-not-allowed disabled:bg-[#0071c28c] "
+          className="border-none px-5 py-2.5 bg-[#0071c2] text-white font-bold cursor-pointer rounded-[5px] disabled:cursor-not-allowed disabled:bg-[#0071c28c] active:scale-95"
         >
           Login
         </button>
