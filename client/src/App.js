@@ -14,10 +14,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/hotels" element={<List/>}/>
+        <Route path="/api/hotels" element={<List/>}/>
         <Route path="/api/hotels/find/:id" element={<Hotel/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
+        <Route path="api/login" element={<Login/>}/>
+        <Route path="api/register" element={<Register/>}/>
       </Routes>
     </BrowserRouter>
   );
