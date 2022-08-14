@@ -44,8 +44,8 @@ function Register() {
       });
 
       try {
-        const res = await axios.post("/auth/register", credentials);
-        navigate("/login");
+        const res = await axios.post("/api/auth/register", credentials);
+        navigate("/api/login");
       } catch (error) {
         console.log(error);
       }
