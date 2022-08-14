@@ -18,7 +18,7 @@ import { Reserve } from "../../components/reserve/Reserve";
 
 const Hotel = () => {
   const location = useLocation();
-  const id = location.pathname.split("/")[2]; // get hotel id
+  const id = location.pathname.split("/")[4]; // get hotel id
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false); // slider modal open and close state
   const [openModal, setOpenModal] = useState(false); // slider modal open and close state
