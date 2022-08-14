@@ -23,7 +23,9 @@ const Hotel = () => {
   const [open, setOpen] = useState(false); // slider modal open and close state
   const [openModal, setOpenModal] = useState(false); // slider modal open and close state
 
-  const { data, loading, error } = useFetch(`/hotels/find/${id}`);
+  console.log(`location pathname is ${location.pathname}`)
+
+  const { data, loading, error } = useFetch(location.pathname);
   const { user } = useContext(AuthContext);
   const { dates, options } = useContext(SearchContext);
   const navigate = useNavigate();
