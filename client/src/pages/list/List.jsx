@@ -38,7 +38,7 @@ const List = () => {
                 className="h=[30px] border-none p-[5px] "
                 placeholder={destination}
                 type="text"
-                onChange={(e) => setDestination(e.target.value)}
+                onChange={(e) => setDestination(e.target.value.toLowerCase())}
               />
             </div>
             <div className="flex flex-col gap-[5px] mb-2.5 ">
