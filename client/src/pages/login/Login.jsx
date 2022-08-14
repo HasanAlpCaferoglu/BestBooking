@@ -24,7 +24,7 @@ function Login() {
     dispatch({ type: "LOGIN_START" });
 
     try {
-      const res = await axios.post("/auth/login", credentials);
+      const res = await axios.post("/api/auth/login", credentials);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
       navigate("/");
     } catch (err) {
@@ -61,7 +61,7 @@ function Login() {
         >
           Login
         </button>
-        <Link to="/register">
+        <Link to="/api/register">
           <p className="text-white lg:text-black">
             Don't have an account yet, please{" "}
             <span className="underline text-[#0071c2]">register.</span>
