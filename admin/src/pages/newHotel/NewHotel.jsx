@@ -15,21 +15,20 @@ const NewHotel = () => {
 
   const navigate = useNavigate();
 
-  const { data, loading, error } = useFetch("/rooms");
+  // const { data, loading, error } = useFetch("/rooms");
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleSelect = (e) => {
-    const value = Array.from(
-      e.target.selectedOptions,
-      (option) => option.value
-    );
-    setRooms(value);
-  };
+  // const handleSelect = (e) => {
+  //   const value = Array.from(
+  //     e.target.selectedOptions,
+  //     (option) => option.value
+  //   );
+  //   setRooms(value);
+  // };
   
-  console.log(files)
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -55,7 +54,7 @@ const NewHotel = () => {
         photos: list,
       };
 
-      await axios.post("/hotels", newhotel);
+      await axios.post("/api/hotels", newhotel);
       navigate("/admin/hotels")
     } catch (err) {console.log(err)}
   };

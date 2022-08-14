@@ -16,7 +16,7 @@ const NewRoom = () => {
   const navigate = useNavigate();
 
 
-  const { data, loading, error } = useFetch("/hotels");
+  const { data, loading, error } = useFetch("/api/hotels");
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -26,7 +26,7 @@ const NewRoom = () => {
     e.preventDefault();
     const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
     try {
-      await axios.post(`/rooms/${hotelId}`, { ...info, roomNumbers });
+      await axios.post(`/api/rooms/${hotelId}`, { ...info, roomNumbers });
       navigate("/admin/rooms")
     } catch (err) {
       console.log(err);
@@ -70,7 +70,7 @@ const NewRoom = () => {
                   id="hotelId"
                   onChange={(e) => setHotelId(e.target.value)}
                 >
-                  <option value="" disabled selected hidden>Choose a hotel</option>
+                  <option value="">Choose a hotel</option>
                   {loading
                     ? "loading"
                     : data &&
