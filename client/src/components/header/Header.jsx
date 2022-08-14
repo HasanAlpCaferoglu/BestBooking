@@ -97,7 +97,7 @@ const Header = ({ type }) => {
                       type="text"
                       placeholder="Where are you going?"
                       className="border-none outline-none text-gray-500"
-                      onChange={(e) => setDestination(e.target.value)}
+                      onChange={(e) => setDestination(e.target.value.toLowerCase())}
                     />
                   </div>
                   <div className="flex items-center gap-2.5 w-full pl-1 py-2 border-b-2 z-20 md:pr-0 md:py-0">
