@@ -9,7 +9,7 @@ import { useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useContext } from "react";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
@@ -79,14 +79,12 @@ const Header = ({ type }) => {
               </div>
 
               {!user && (
-                <button
-                  onClick={() => {
-                    navigate("api/login");
-                  }}
+                <Link
+                  to="/api/login"
                   className="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 w-max rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-in-out duration-150 hover:scale-105"
                 >
                   Sign in / Register
-                </button>
+                </Link>
               )}
             </div>
 
