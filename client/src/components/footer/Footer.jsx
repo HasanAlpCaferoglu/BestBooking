@@ -7,7 +7,7 @@ export default function Footer() {
 
   const handleClick = async () => {
     if (process.env.NODE_ENV === "production") {
-      navigate("/admin/login");
+      window.location = "https://adminbbestbooking.herokuapp.com/admin/login"; // redirect to the admin panel
     } else {
       window.location = "http://localhost:3001/admin/login"; // redirect to the admin panel
     }
